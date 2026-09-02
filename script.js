@@ -42,10 +42,16 @@ onValue(postsRef, (snapshot) => {
     Object.values(data).reverse().forEach((post) => {
       const postCard = document.createElement("div");
       postCard.classList.add("post-card");
+      
+      // Check if post is an object or an old plain string
+      const author = (typeof post === "object" && post.author) ? post.author : "Anonymous";
+      const message = (typeof post === "object") ? (post.content || "") : post;
+      const time = (typeof post === "object" && post.timestamp) ? post.timestamp : "";
+
       postCard.innerHTML = `
-        <strong>${post.author || "Anonymous"}</strong>
-        <p>${post.content}</p>
-        <small>${post.timestamp}</small>
+        <strong>${author}</strong>
+        <p>${message}</p>
+        <small>${time}</small>
       `;
       feed.appendChild(postCard);
     });
