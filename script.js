@@ -1,10 +1,16 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-// Keep your existing firebaseConfig object here
 const firebaseConfig = {
-  // YOUR FIREBASE KEYS ARE ALREADY HERE
+  apiKey: "AIzaSyDmTVqT0-LzrOtmaXGEJ3wo60hcnxWZ17g",
+  authDomain: "my-social-app-b623c.firebaseapp.com",
+  databaseURL: "https://my-social-app-b623c-default-rtdb.firebaseio.com",
+  projectId: "my-social-app-b623c",
+  storageBucket: "my-social-app-b623c.firebasestorage.app",
+  messagingSenderId: "107965850423",
+  appId: "1:107965850423:web:eb78f1492e526fe28ff0b2"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
